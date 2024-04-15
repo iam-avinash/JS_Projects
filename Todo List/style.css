@@ -11,13 +11,27 @@
   background: linear-gradient(135deg, #097942, #00d4ff);
   padding: 10px;
 }
+
 .todo-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 540px;
   background: #fff;
   margin: 100px auto 20px;
   padding: 40px 30px 70px;
   border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#list-container {
+  margin-top: auto; /* Push the list container to the bottom */
 }
 .todo-app h2 {
   color: #002765;
@@ -60,12 +74,15 @@ button {
 }
 
 ul li {
+  display: flex;
   list-style: none;
   font-size: 17px;
   padding: 12px 8px 12px 50px;
   user-select: none;
   cursor: pointer;
   position: relative;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 ul li::before {
   content: " ";
@@ -87,4 +104,21 @@ ul li.checked {
 
 ul li.checked::before {
   background-image: url(./Assets/checked.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+}
+
+ul li span:hover {
+  background: #edeef0;
+  border-radius: 50px;
 }
